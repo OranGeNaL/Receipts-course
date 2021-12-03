@@ -26,7 +26,7 @@ header {
 }
 
 .header-nav {
-    width: 400px;
+    width: 100px;
 }
 
 .header-nav > ul {
@@ -109,6 +109,37 @@ header {
     border-radius: 15px;
 
     background-color: #C4C4C4;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-container {
+    width: 300px;
+
+    color: black;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 200;
+    font-size: 14px;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.logout-button {
+    cursor: pointer;
+
+    font-size: 12px;
 }
 
 .add-new-button {

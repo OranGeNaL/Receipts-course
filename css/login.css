@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+
+    font-family: 'Rubik', sans-serif;
+}
+
+main {
+    margin: auto;
+    width: 1000px;
+}
+
+.authorization-container {
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.login-field {
+    width: 400px;
+    height: 200px;
+
+    padding: 20px;
+
+    border: solid 2px #E4E4E4;
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.email-field, .password-field {
+    width: 300px;
+
+
+
+    transition: 0.1ms;
+    /* background: green; */
+}
+
+.valid-value {
+    background-color: #94ff9a;
+}
+
+.invalid-value {
+    background-color: #ffbb94;
+}
+
+#login-button {
+    width: 50px;
+    /* width: auto; */
+}
+
+#register-button {
+    width: 130px;
+}
