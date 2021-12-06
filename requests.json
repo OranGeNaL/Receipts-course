@@ -1,0 +1,18 @@
+
+{
+    "reg-req": { 
+        "email": "",
+        "password": ""
+    },
+    "reg-res": {
+        "sesID": ""
+    },
+
+    "ses-validation-req": {
+        "sesID": ""
+    },
+
+    "ses-validation-res": {
+        "email": ""
+    }
+}

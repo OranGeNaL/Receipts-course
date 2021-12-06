@@ -1,21 +1,16 @@
 $(document).ready(function(){
     //setSession(sesId);
     // действия, которые необходимо выполнить после загрузки документа...
-    if(validateSession())
-    {
-        $("main>h1").remove();
-        $("main>.authorization-container").remove();
-
-        $("main").append("<h1>Вы уже авторизованы!</h1>");
-    }
+    changeLoginContent();
 
     $('#register-button').click(function () { 
-        var email = $('#register-email').val();
-        var password = $('#register-password').val();
+        var Email = $('#register-email').val();
+        var Password = $('#register-password').val();
 
-        if(validateEmail(email) && validatePassword(password))
+        if(validateEmail(Email) && validatePassword(Password))
         {
-            alert("email: " + email + "\npassword: " + password);
+            // alert("email: " + Email + "\npassword: " + Password);
+            sendRegReq(Email, Password);
         }
         else
         {
@@ -68,3 +63,19 @@ $(document).ready(function(){
         }
       });
 });
+
+async function changeLoginContent() {
+    if(await validateSession())
+    {
+        $("main>h1").remove();
+        $("main>.authorization-container").remove();
+
+        $("main").append("<h1>Вы уже авторизованы!</h1>");
+    }
+    else
+    { 
+        $(".profile-name").html("неавторизованный пользователь");
+        $('#logout-button').html('войти');
+        $('#logout-button').attr('href', "/pages/login.html");
+    }
+}
