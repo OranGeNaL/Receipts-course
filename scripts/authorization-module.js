@@ -11,7 +11,6 @@ function validatePassword(password) {
 
 function setSession(id) {
     $.cookie('session', id, { expires: 7, path: '/' });
-    // alert("asdwr")
 }
 
 async function validateSession() {
@@ -19,7 +18,7 @@ async function validateSession() {
         sesID: $.cookie('session')
     }
 
-    let url = 'http://192.168.3.8:8080/api/register?sesID=' + $.cookie('session')
+    let url = apiLink + '/api/register?sesID=' + $.cookie('session')
 
     let response = await fetch(url, {
         method: 'GET',
@@ -27,22 +26,16 @@ async function validateSession() {
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
-        // body: JSON.stringify(cachedSession)
     });
       
     if (response.ok)
     {
         let result = await response.json();
-        alert(JSON.stringify(result));
-        // alert(result["sesID"].stringify())
-        // var sesID = JSON.parse(JSON.stringify(result)).sesID;
-        // alert(sesID);
-        setSession(sesID);
-
-        document.location.href = "/pages/login.html";
+        currentEmail = JSON.parse(JSON.stringify(result)).email;
         return true
     }
 
+    currentEmail = "";
     return false;
 }
 
@@ -52,7 +45,7 @@ async function sendRegReq(Email, Password) {
         password: Password
     }
 
-    let response = await fetch('http://192.168.3.8:8080/api/register', {
+    let response = await fetch(apiLink + '/api/register', {
         method: 'POST',
         mode: 'cors',
         headers: {
@@ -79,10 +72,35 @@ async function sendRegReq(Email, Password) {
     }
 }
 
-var defaultSesId = "1231232";
+async function sendAuthRec(Email, Password) {
+    let url = apiLink + '/api/register/login?email=' + Email + '&password=' + Password;
+
+    let response = await fetch(url, {
+        method: 'GET',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+    });
+      
+    if (response.ok)
+    {
+        let result = await response.json();
+        setSession(result.sesID);
+        document.location.href = "/pages/login.html";
+        return true
+    }
+
+    currentEmail = "";
+    return false;
+}
 
 $(document).ready(function(){
     // defaultSesId(sesId);
     // действия, которые необходимо выполнить после загрузки документа...
     
 });
+
+var defaultSesId = "1231232";
+var currentEmail = "";
+var apiLink = "http://localhost:8080";

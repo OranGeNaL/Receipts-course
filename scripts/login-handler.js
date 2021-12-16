@@ -18,6 +18,21 @@ $(document).ready(function(){
         }
     });
 
+    $('#login-button').click(function () { 
+        var Email = $('#login-email').val();
+        var Password = $('#login-password').val();
+
+        if(validateEmail(Email) && validatePassword(Password))
+        {
+            // alert("email: " + Email + "\npassword: " + Password);
+            sendAuthRec(Email, Password);
+        }
+        else
+        {
+            alert("Неподходящий email или пароль!");
+        }
+    });
+
 
     //Валидация почты и пароля на уровне формы
     $("#login-email").change(function() {
