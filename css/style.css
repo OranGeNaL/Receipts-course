@@ -202,3 +202,52 @@ header {
 
     display: inline-block;
 }
+
+.receipt-container {
+    margin: auto;
+
+    margin-bottom: 30px;
+
+    width: 800px;
+    height: 200px;
+
+    border-radius: 20px;
+    box-shadow: 0 6px 20px 5px #00000010;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    font-family: 'Rubik', sans-serif;
+}
+
+.receipt-img {
+    width: 150px;
+    height: 120px;
+
+    border-radius: 20px;
+    box-shadow: 0 6px 20px 5px #00000010;
+
+    background-color: #E4E4E4;
+}
+
+.receipt-description-container > a {
+    text-decoration: none;
+    color: black;
+
+    display: flex;
+}
+
+.receipt-description-container > a:visited {
+    text-decoration: none;
+
+    color: black;
+}
+
+.receipt-description-container > p {
+    display: inline-block;
+
+    margin-top: 20px;
+    width: 500px;
+}

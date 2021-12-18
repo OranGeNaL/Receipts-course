@@ -7,20 +7,36 @@ else {
     console.log("nothing here");
 }
 
-$('.add-receipt').click(function() {
-    console.log("aboba")
-})
-
 $(document).ready(function(){
-    // действия, которые необходимо выполнить после загрузки документа...
-
-
-    // $(".receipts-list").append('<div class="receipt-card"><p>"РЕЦЕПТ РЕЦЕПТ"</p></div>')
-    // $("main").append('хахахаха')
-
-    $('.add-receipt').click(function() {
-        // console.log("aboba")
-        $(".receipts-list").append('<div class="receipt-card"><p>"РЕЦЕПТ РЕЦЕПТ"</p></div>')
-        $("main").append('хахахаха')
-    })
+    loadAllRecipes();
 });
+
+async function loadAllRecipes()
+{
+    var result = await getAllRecipes();
+
+    if(result != null)
+    {
+        $(".receipts-list").append(buildReceipts(result));
+    }
+}
+
+function buildReceipts(responseContent)
+{
+    var receiptsStr = "";
+    for (let i = 0; i < responseContent.length; i++) {
+        const receipt = responseContent[i];
+        receiptsStr += `<div class="receipt-container">
+        <div class="receipt-img">
+
+        </div>
+        <div class="receipt-description-container">
+            <a href="/pages/dish.html?id=` + receipt.id + `">` + receipt.name + `</a>
+            <p>` + receipt.description + `</p>
+        </div>
+    </div>
+    `;
+    }
+
+    return receiptsStr;
+}
