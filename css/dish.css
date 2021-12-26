@@ -141,6 +141,7 @@ h2 {
     height: 200px;
 
     margin-top: 20px;
+    margin-bottom: 20px;
 
     border-radius: 20px;
     box-shadow: 0 6px 20px 5px #00000010;
@@ -175,4 +176,25 @@ h2 {
 
 .long {
     background-color: #FFB1B1;
+}
+
+.remove-receipt {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+
+    color: black;
+    font-size: 16px;
+}
+
+.remove-receipt:visited {
+    color: black;
+    font-size: 16px;
+}
+
+.receipt-header-top {
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-between;
+    align-items: center;
 }

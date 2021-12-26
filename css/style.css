@@ -219,7 +219,14 @@ header {
     align-items: center;
     justify-content: space-around;
 
+    transition: all 0.15s ease-in-out;
+
     font-family: 'Rubik', sans-serif;
+}
+
+.receipt-container:hover {
+    /* z-index: -5; */
+    transform: scale(1.05);
 }
 
 .receipt-img {
@@ -233,14 +240,16 @@ header {
 }
 
 .receipt-description-container > a {
-    text-decoration: none;
+    font-size: 24px;
+
+    text-decoration: underline;
     color: black;
 
     display: flex;
 }
 
 .receipt-description-container > a:visited {
-    text-decoration: none;
+    text-decoration: underline;
 
     color: black;
 }
@@ -250,4 +259,118 @@ header {
 
     margin-top: 20px;
     width: 500px;
+}
+
+.search-res-cont {
+    width: 250px;
+
+    position: relative;
+    top: 10px;
+
+    font-family: 'Rubik', sans-serif;
+    font-weight: 100;
+    /* left: px; */
+}
+
+.result-cont {
+    padding-left: 20px;
+    margin-bottom: 10px;
+    /* padding-right: 20px; */
+
+    width: 250px;
+    height: 50px;
+
+    position: relative;
+    animation: fromTop 0.5s;
+
+    border-radius: 15px;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    box-shadow: 0 6px 20px 5px #00000036;
+}
+
+.res-img {
+    width: 40px;
+    height: 30px;
+
+    background-color: #E4E4E4;
+
+    border-radius: 10px;
+}
+
+.res-a-cont {
+    width: 200px;
+}
+
+.result-cont a {
+    text-decoration: none;
+
+    color: black;
+}
+
+.result-cont a:visited {
+    text-decoration: none;
+
+    color: black;
+}
+
+.profile-email {
+    margin-top: 40px;
+}
+
+@keyframes fromTop {
+    from {
+        top: -40px;
+        opacity: 0;
+    }
+  
+    to {
+        top: 0;
+        opacity: 100%;
+    }
+}
+
+@keyframes fromLeft {
+    from {
+        left: -40px;
+        opacity: 0;
+    }
+  
+    to {
+        left: 0;
+        opacity: 100%;
+    }
+}
+
+.from-top-animated {
+    position: relative;
+    animation: fromTop 0.5s;
+}
+
+.from-left-animated {
+    position: relative;
+    animation: fromLeft 0.5s;
+}
+
+#profile-link {
+    color: black;
+}
+
+#profile-link:visited {
+    color: black;
+}
+
+#logout-button {
+    color: darkblue;
+}
+
+#logout-button:visited {
+    color: darkblue;
 }

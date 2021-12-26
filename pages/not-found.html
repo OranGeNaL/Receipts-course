@@ -11,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script src="/scripts/authorization-module.js"></script>
+    <script src="/scripts/content-module.js"></script>
     <script src="/scripts/jquery-cookies.js"></script>
     <script src="/scripts/header-handler.js"></script>
 
@@ -22,15 +23,22 @@
             <div class="logo"></div>
             <nav class="header-nav">
                 <ul>
-                    <li><a href="/pages/dish.html">Рецепты</a></li>
+                    <li><a href="/index.html">Рецепты</a></li>
                 </ul>
             </nav>
 
             <form class="search-form" action="" method="get">
                 <input class="search-input" name="s" placeholder="запрос" type="search">
-                <button class="search-button" type="submit">
+                <!-- <button class="search-button" type="submit">
                     <i class="fas fa-search"></i>
-                </button>
+                </button> -->
+
+                <div class="search-res-cont">
+                    <!-- <div class="result-cont">
+                        <div class="res-img"></div>
+                        <a class="result" href="">Bebra</a>
+                    </div> -->
+                </div>
             </form>
             
             <div id="add-new-button">

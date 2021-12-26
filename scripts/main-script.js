@@ -19,6 +19,10 @@ async function loadAllRecipes()
     {
         $(".receipts-list").append(buildReceipts(result));
     }
+    else
+    {
+        document.location.href = "/pages/not-found.html";
+    }
 }
 
 function buildReceipts(responseContent)
@@ -26,7 +30,7 @@ function buildReceipts(responseContent)
     var receiptsStr = "";
     for (let i = 0; i < responseContent.length; i++) {
         const receipt = responseContent[i];
-        receiptsStr += `<div class="receipt-container">
+        receiptsStr += `<div class="receipt-container from-left-animated">
         <div class="receipt-img">
 
         </div>

@@ -14,6 +14,11 @@ function setSession(id) {
 }
 
 async function validateSession() {
+    if(validSes)
+    {
+        return true;
+    }
+
     let cachedSession = {
         sesID: $.cookie('session')
     }
@@ -32,6 +37,7 @@ async function validateSession() {
     {
         let result = await response.json();
         currentEmail = JSON.parse(JSON.stringify(result)).email;
+        validSes = true;
         return true
     }
 
@@ -103,4 +109,5 @@ $(document).ready(function(){
 
 var defaultSesId = "1231232";
 var currentEmail = "";
-var apiLink = "http://localhost:8080";
+var validSes = false;
+var apiLink = "http://85.15.113.48:81";
